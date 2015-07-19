@@ -1,0 +1,73 @@
+apply plugin: 'java'
+apply plugin: 'war'
+//Required for running on tomcat
+apply plugin: 'eclipse-wtp'
+ 
+// JDK 7
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+ 
+repositories {
+	flatDir {
+		   dirs 'F:/libInventory'
+	   }
+}
+ 
+dependencies {
+	compile 'ch.qos.logback:logback-classic:1.1.3'
+	compile 'org.springframework:spring-webmvc:4.1.7.RELEASE'
+	compile 'javax.servlet:jstl:1.2'
+	compile 'org.springframework:spring-core:4.1.7.RELEASE'
+	compile 'org.springframework:spring-beans:4.1.7.RELEASE'
+	compile 'org.springframework:spring-expression:4.1.7.RELEASE'
+	compile 'org.springframework:spring-context:4.1.7.RELEASE'
+    compile 'org.springframework:spring-context-support:4.1.7.RELEASE'
+    compile 'org.springframework:spring-web:4.1.7.RELEASE'
+    compile 'org.springframework:spring-aop:4.1.7.RELEASE'
+	compile 'org.springframework:spring-tx:4.1.7.RELEASE'
+    compile 'org.aspectj:aspectjrt:1.8.5'
+    compile 'org.aspectj:aspectjweaver:1.8.5'
+    compile 'org.apache.cxf:cxf-bundle:3.0.0-milestone2'
+    compile 'org.apache.cxf:cxf-rt-transports-http-hc:3.0.3'
+    compile 'org.apache.ws.security:wss4j:1.6.9'
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile 'commons-logging:commons-logging:1.2'
+	compile 'javax.persistence:persistence-api:1.0.2'
+	compile 'javax.persistence:javax.persistence:2.0.0'
+	compile 'org.springframework:spring-jpa:2.0.8'
+	
+	compile 'org.hibernate:hibernate-annotations:3.5.6-Final'
+	compile 'org.hibernate:hibernate-core:5.0.0.CR2'
+	compile 'org.hibernate:hibernate-entitymanager:5.0.0.CR2'
+	compile 'org.hibernate:hibernate-validator:5.2.0.CR1'
+	compile 'org.hibernate:hibernate-commons-annotations:3.3.0.ga'
+	compile 'org.hibernate:hibernate-ehcache:5.0.0.CR2'
+	compile 'org.hibernate:hibernate-c3p0:5.0.0.CR2'
+	compile 'org.hibernate:hibernate-search:5.4.0.Alpha1'
+	compile 'org.hibernate:hibernate-testing:5.0.0.CR2'
+	compile 'org.hibernate:hibernate-envers:5.0.0.CR2'
+	compile 'org.hibernate:hibernate-tools:4.3.1.CR1'
+	compile 'org.hibernate:hibernate-validator-cdi:5.2.0.CR1'
+
+
+
+	compile (group: 'junit', name: 'junit', version: '+')
+    compile (group: 'junit-addons', name: 'junit-addons', version: '+')
+    compile (group: 'org.mockito', name: 'mockito-all', version: '+')
+    compile (group:'org.easymock', name:'easymock', version:'+')
+    compile (group:'org.easymock', name:'easymockclassextension', version:'+')
+    compile (group:'org.springframework', name:'spring-test', version:'4.1.7.RELEASE')
+}
+
+eclipse {
+ 
+  wtp {
+    component {
+ 
+      //define context path, default to project folder name
+      contextPath = 'SpringHelloWorld'
+ 
+    }
+ 
+  }
+}
